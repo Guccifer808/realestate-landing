@@ -6,6 +6,9 @@ import videoVibe from "../../assets/videos/LifestyleVibe.mp4";
 import videoCalahonda from "../../assets/videos/LifestyleCalahonda.mp4";
 import videoEvening from "../../assets/videos/LifestyleEvening.mp4";
 import playBtn from "../../assets/playBtn.svg";
+
+import ReactPlayer from "react-player";
+
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
@@ -33,6 +36,22 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
     videoCalahondaRef.current?.setAttribute("preload", "metadata");
     videoEveningRef.current?.setAttribute("preload", "metadata");
   }, []);
+
+  const [hovered, setHovered] = useState(false);
+
+  const handleHover = (videoRef: any) => {
+    setHovered(true);
+    setShowVibeOverlay(false);
+    videoRef?.current?.seekTo(0); // Restart the video from the beginning
+    videoRef?.current?.play();
+  };
+
+  const handleMouseOut = (videoRef: any) => {
+    setHovered(false);
+    setShowVibeOverlay(true);
+    videoRef?.current?.pause();
+    videoRef?.current?.seekTo(0); // Go back to the start on mouse out
+  };
 
   const handleHoverVibe = () => {
     if (videoVibeRef.current) {
@@ -97,18 +116,29 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
               <div className="w-full px-3 sm:px-4 xl:w-2/5 ">
                 <div
                   className=" cursor-pointer py-3 sm:py-4"
-                  onMouseEnter={handleHoverVibe}
-                  onMouseLeave={handleMouseOutVibe}
+                  // onMouseEnter={handleHoverVibe}
+                  // onMouseLeave={handleMouseOutVibe}
+                  onMouseEnter={() => handleHover(videoVibeRef)}
+                  onMouseLeave={() => handleMouseOut(videoVibeRef)}
                   style={{ position: "relative", display: "inline-block" }}
                 >
-                  <motion.video
+                  {/* <motion.video
                     className="w-full rounded-xl md:h-[400px]"
                     ref={videoVibeRef}
                     preload="metadata"
                     initial="hidden"
                   >
                     <source src={videoVibe} type="video/mp4" />
-                  </motion.video>
+                  </motion.video> */}
+                  <ReactPlayer
+                    url={videoVibe}
+                    controls={true} // Enable player controls
+                    width="100%"
+                    height="100%"
+                    playing={false} // Set to true to auto-play
+                    volume={0.25} // Set volume (0 to 1)
+                    preload="metadata"
+                  />
                   {showVibeOverlay && (
                     <div
                       style={{
