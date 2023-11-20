@@ -29,9 +29,6 @@ const Advantages: FC<Props> = ({ setSelectedPage }: Props) => {
           <h1 className="text-2xl font-bold text-dark-100 sm:text-3xl">
             Привилегии приобретения недвижимости в Испании
           </h1>
-          {/* <p className="max-w-2 mx-auto mt-2 text-dark-100">
-            Lorem ipsum dolor sit amet.
-          </p> */}
         </motion.div>
         {/* services */}
         <motion.div

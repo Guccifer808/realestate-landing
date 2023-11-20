@@ -56,4 +56,6 @@ body
   }
 
 
- 
+ video {
+  border-radius: 15px;
+ }

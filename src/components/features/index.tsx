@@ -12,11 +12,11 @@ type Props = {
 const featuresList: Array<FeaturesType> = [
   {
     image: { thumbnail1 },
-    action: "",
+    title: "GoldenVisa",
   },
   {
     image: { thumbnail2 },
-    action: "",
+    title: "BuyersGuide",
   },
 ];
 //motion div configurations
@@ -93,8 +93,6 @@ const Features: FC<Props> = ({ setSelectedPage }: Props) => {
               <Feature
                 key={item.title}
                 image={Object.values(item.image)[0]} // extract the image file path
-                title={item.title}
-                action={item.action}
                 setSelectedPage={setSelectedPage}
               />
             ))}
