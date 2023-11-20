@@ -39,6 +39,10 @@ const ThankYou = (props: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+  // Scroll to the top of the page when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleMenuToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
