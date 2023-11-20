@@ -15,7 +15,7 @@ const handleScrollToTop = () => {
 
 const Footer: FC<Props> = ({}: Props) => {
   return (
-    <footer className="inset-0  bg-gradient-to-b from-primary-bg-light/90 to-gold-main/25 pt-16">
+    <footer className="inset-0  bg-gradient-to-b from-primary-bg-light/90 to-gold-main/25 pt-8">
       <div className="mx-auto max-w-7xl px-8 md:px-6">
         <div className="row-gap-10 mb-8 flex justify-center gap-16 lg:flex">
           <div className="flex flex-col items-center justify-center md:max-w-md lg:flex">

@@ -54,7 +54,7 @@ const Gallery: FC<Props> = ({ setSelectedPage }) => {
                 Эксклюзивные объекты: идеальный выбор для вашего будущего
               </h1>
             </motion.div>
-            <p className="text-dark-100">
+            <p className="text-dark-100 ">
               Мы собрали наиболее актуальные и востребованные объекты для наших
               клиентов.
             </p>
@@ -69,7 +69,7 @@ const Gallery: FC<Props> = ({ setSelectedPage }) => {
               }}
               onViewportEnter={() => setSelectedPage(SelectedPage.Objects)}
             ></motion.ul>
-            <div className="hidden w-full min-w-full sm:flex">
+            <div className="hidden w-full min-w-full sm:mt-5 sm:flex">
               <AnchorLink
                 href={"#contact"}
                 offset="100"
@@ -81,7 +81,7 @@ const Gallery: FC<Props> = ({ setSelectedPage }) => {
           </div>
 
           {/* Gallery */}
-          <div className="mt-6 items-center justify-between justify-items-center md:order-2 md:mt-0 md:flex md:w-7/12">
+          <div className="items-center justify-between justify-items-center md:order-2 md:mt-0 md:flex md:w-7/12">
             <div id="gallery" className="relative w-full" data-carousel="slide">
               <div className="relative h-56 overflow-hidden rounded-xl md:h-96">
                 <Swiper
@@ -113,7 +113,7 @@ const Gallery: FC<Props> = ({ setSelectedPage }) => {
                 </Swiper>
               </div>
             </div>
-            <div className="mt-6 flex w-full min-w-full bg-red-100 sm:hidden">
+            <div className="flex w-full min-w-full sm:hidden">
               <AnchorLink
                 href={"#contact"}
                 offset="100"

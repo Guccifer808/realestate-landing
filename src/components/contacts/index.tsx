@@ -88,14 +88,14 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
             }}
           >
             {/* info */}
-            <div className="z-10 w-full py-8 ">
+            <div className="z-10 w-full pt-8 pb-16">
               <div className="flex min-h-[300px] items-center justify-center rounded-xl bg-gold-main/30 p-3 shadow-lg sm:p-2 md:justify-start md:pl-14 xl:justify-center xl:pr-32">
                 <form onSubmit={handleSubmit}>
                   <div className="">
                     <span className="font-medium text-gold-main">
                       Руководство для Покупателя
                     </span>
-                    <h1 className="text-lg font-bold text-dark-100 sm:text-2xl">
+                    <h1 className="mb-5 text-lg font-bold text-dark-100  sm:text-2xl">
                       Получите полезную информацию заполнив форму
                     </h1>
                   </div>
@@ -114,7 +114,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                         placeholder="Ваше Имя"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full rounded-xl border px-4 py-3 text-slate-800 focus:border-green-main focus:outline-none"
+                        className="w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none"
                       />
                     </div>
                     <div className="mb-3 flex flex-col items-center md:mt-3 ">
@@ -132,17 +132,17 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                         placeholder="Ваш Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className={`w-full rounded-xl border ${
+                        className={`w-64 rounded-xl border ${
                           email && !isEmailValid(email)
                             ? "focus:border-red-500"
                             : ""
-                        } px-4 py-3 text-slate-500 focus:border-green-main focus:outline-none`}
+                        } px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
                       />
                     </div>
                     <div className="mb-3 flex flex-col items-center md:mt-3">
                       <button
                         type="submit"
-                        className="flex w-full items-center justify-center rounded-xl bg-green-main p-3 font-semibold text-light-100 transition-all duration-300 hover:scale-105 hover:bg-gold-main"
+                        className="flex w-64 items-center justify-center rounded-xl bg-green-main p-3 font-semibold text-light-100 transition-all duration-300 hover:scale-105 hover:bg-gold-main"
                       >
                         Получить
                         <svg
