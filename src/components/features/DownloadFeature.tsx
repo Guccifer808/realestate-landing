@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FC, useState } from "react";
 import { IoMdDownload } from "react-icons/io";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
   image: string;
@@ -44,9 +43,7 @@ const DownloadFeature: FC<Props> = ({ image, title, pdfPath }: Props) => {
       {isHovered && (
         <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-xl bg-gold-main bg-opacity-10">
           <span className="cursor-pointer text-lg font-bold text-gold-main">
-            {/* <AnchorLink href={`#contact`} offset="100"> */}
             <IoMdDownload size={48} onClick={handleDownload} />
-            {/* </AnchorLink> */}
           </span>
         </div>
       )}

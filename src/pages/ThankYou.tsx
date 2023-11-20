@@ -12,7 +12,7 @@ import DownloadFeature from "../components/features/DownloadFeature";
 
 type Props = {};
 
-const featuresList: Array<FeaturesType> = [
+const downloadList: Array<FeaturesType> = [
   {
     image: { thumbnail1 },
     action: "",
@@ -39,6 +39,7 @@ const ThankYou = (props: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+
   // Scroll to the top of the page when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -192,7 +193,7 @@ const ThankYou = (props: Props) => {
               transition={{ delay: 0.5, duration: 0.5 }}
               variants={container}
             >
-              {featuresList.map((item: FeaturesType) => (
+              {downloadList.map((item: FeaturesType) => (
                 <DownloadFeature
                   key={item.title}
                   image={Object.values(item.image)[0]} // extract the image file path

@@ -9,7 +9,7 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Home: FC<Props> = ({ setSelectedPage }: Props) => {
+const Home: FC<Props> = ({}: Props) => {
   return (
     <motion.section
       className="relative flex h-screen w-screen place-items-center justify-center bg-cover bg-center bg-no-repeat py-16"

@@ -9,7 +9,6 @@ const NotFound = () => {
         src={logo}
         alt="logo"
         className="lg:h-34 w-34 h-34 cursor-pointer lg:w-40"
-        // onClick={handleScrollToTop}
       />
 
       <h1 className="py-5 text-2xl uppercase tracking-widest text-gold-main/70 ">
@@ -35,7 +34,7 @@ const NotFound = () => {
             />
           </svg>
 
-          <span>Go back</span>
+          <span>Назад</span>
         </button>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { SelectedPage, ServicesType } from "../../shared/types";
-import Service, { servicesList } from "./Service";
+import { advantagesList } from "./Advantage";
 import { container } from "../../shared/motionConfig";
+import Advantage from "./Advantage";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -30,7 +31,7 @@ const Advantages: FC<Props> = ({ setSelectedPage }: Props) => {
             Привилегии приобретения недвижимости в Испании
           </h1>
         </motion.div>
-        {/* services */}
+        {/* Advantages */}
         <motion.div
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           initial="hidden"
@@ -38,8 +39,8 @@ const Advantages: FC<Props> = ({ setSelectedPage }: Props) => {
           viewport={{ once: true, amount: 0.15 }}
           variants={container}
         >
-          {servicesList.map((item: ServicesType) => (
-            <Service
+          {advantagesList.map((item: ServicesType) => (
+            <Advantage
               key={item.title}
               icon={item.icon}
               title={item.title}

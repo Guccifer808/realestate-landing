@@ -1,10 +1,8 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
-
 import { ServicesType } from "../../shared/types";
 import { BsBuildingFillCheck } from "react-icons/bs";
 import { TbBeach } from "react-icons/tb";
-import { ImKey2 } from "react-icons/im";
 import { MdFactCheck, MdPriceChange } from "react-icons/md";
 import { RiShieldKeyholeFill } from "react-icons/ri";
 
@@ -18,7 +16,7 @@ const childVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-export const servicesList: Array<ServicesType> = [
+export const advantagesList: Array<ServicesType> = [
   {
     icon: <MdFactCheck size={30} />,
     title: "Безвизовый доступ к Испании",
@@ -54,7 +52,7 @@ export const servicesList: Array<ServicesType> = [
   },
 ];
 
-const Service: FC<Props> = ({ icon, title, description }: Props) => {
+const Advantage: FC<Props> = ({ icon, title, description }: Props) => {
   return (
     <motion.div
       variants={childVariant}
@@ -78,4 +76,4 @@ const Service: FC<Props> = ({ icon, title, description }: Props) => {
   );
 };
 
-export default Service;
+export default Advantage;

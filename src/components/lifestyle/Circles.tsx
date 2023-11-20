@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const Circles = (props: Props) => {
+const Circles = () => {
   return (
     <>
       {" "}

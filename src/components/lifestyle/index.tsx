@@ -1,11 +1,10 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { SelectedPage } from "../../shared/types";
 import Circles from "./Circles";
 import { motion } from "framer-motion";
 import videoVibe from "../../assets/videos/LifestyleVibe.mp4";
 import videoCalahonda from "../../assets/videos/LifestyleCalahonda.mp4";
 import videoEvening from "../../assets/videos/LifestyleEvening.mp4";
-import playBtn from "../../assets/playBtn.svg";
 
 import ReactPlayer from "react-player";
 

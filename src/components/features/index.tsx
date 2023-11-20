@@ -4,6 +4,7 @@ import { FeaturesType, SelectedPage } from "../../shared/types";
 import Feature from "./Feature";
 import thumbnail1 from "../../assets/thumbnail1.webp";
 import thumbnail2 from "../../assets/thumbnail2.webp";
+import { container } from "../../shared/motionConfig";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -19,13 +20,6 @@ const featuresList: Array<FeaturesType> = [
     title: "BuyersGuide",
   },
 ];
-//motion div configurations
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.25 },
-  },
-};
 
 const Features: FC<Props> = ({ setSelectedPage }: Props) => {
   return (
@@ -50,7 +44,6 @@ const Features: FC<Props> = ({ setSelectedPage }: Props) => {
             Руководство для Инвестора
           </h1>
         </motion.div>
-        {/* services img  */}
         <div className="md:flex md:justify-between md:gap-6 xl:gap-10">
           {/* titles */}
           <motion.div

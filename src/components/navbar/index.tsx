@@ -1,5 +1,4 @@
 import { FC, useState, useEffect, useRef } from "react";
-// import logo from "../../assets/images/413carkeys_logo.svg";
 import logo from "../../assets/LOGO.svg";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { SelectedPage } from "../../shared/types";
