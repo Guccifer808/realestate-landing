@@ -40,7 +40,7 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
       <div className="mx-auto max-w-7xl px-8 md:px-6">
         <div className="md:flex md:justify-between md:gap-6">
           <div className="w-full px-6 lg:w-6/12 ">
-            <div className="-mx-3 flex items-center justify-evenly sm:-mx-10 ">
+            <div className="-mx-3 hidden items-center justify-evenly sm:-mx-10 md:flex">
               <div className="w-full px-3 sm:px-4 xl:w-2/5 ">
                 <div
                   className=" cursor-pointer py-3 sm:py-4"
@@ -123,6 +123,64 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
                 удивительными историями. Откройте для себя эстетику и стиль,
                 ощутите атмосферу и эмоции жизни на побережье.
               </p>
+              <div className="-mx-3 mt-5 flex items-center justify-evenly sm:-mx-10 sm:hidden">
+                <div className="w-full px-3 sm:px-4 xl:w-2/5 ">
+                  <div
+                    className=" cursor-pointer py-3 sm:py-4"
+                    onMouseEnter={() => handleHover(videoCalahondaRef)}
+                    onMouseLeave={() => handleMouseOut(videoCalahondaRef)}
+                    style={{ position: "relative", display: "inline-block" }}
+                  >
+                    <ReactPlayer
+                      url={videoCalahonda}
+                      controls={true}
+                      width="100%"
+                      height="100%"
+                      playing={false}
+                      volume={0.25}
+                      preload="metadata"
+                    />
+                  </div>
+                  <div
+                    className="cursor-pointer py-4 sm:py-8 "
+                    onMouseEnter={() => handleHover(videoEveningRef)}
+                    onMouseLeave={() => handleMouseOut(videoEveningRef)}
+                    style={{ position: "relative", display: "inline-block" }}
+                  >
+                    <ReactPlayer
+                      url={videoEvening}
+                      controls={true}
+                      width="100%"
+                      height="100%"
+                      playing={false}
+                      volume={0.25}
+                      preload="metadata"
+                    />
+                  </div>
+                </div>
+                <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div
+                    className="relative z-10 cursor-pointer py-3 sm:py-4"
+                    onMouseEnter={() => handleHover(videoVibeRef)}
+                    onMouseLeave={() => handleMouseOut(videoVibeRef)}
+                    style={{ position: "relative", display: "inline-block" }}
+                  >
+                    <ReactPlayer
+                      url={videoVibe}
+                      controls={true}
+                      width="100%"
+                      height="100%"
+                      playing={false}
+                      volume={0.25}
+                      preload="metadata"
+                    />
+
+                    <span className="absolute -right-7 -bottom-7 z-[-1]">
+                      <Circles />
+                    </span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>

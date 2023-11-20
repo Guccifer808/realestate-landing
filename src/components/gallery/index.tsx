@@ -54,7 +54,7 @@ const Gallery: FC<Props> = ({ setSelectedPage }) => {
                 Эксклюзивные объекты: идеальный выбор для вашего будущего
               </h1>
             </motion.div>
-            <p className="mb-10 text-dark-100">
+            <p className="text-dark-100">
               Мы собрали наиболее актуальные и востребованные объекты для наших
               клиентов.
             </p>
