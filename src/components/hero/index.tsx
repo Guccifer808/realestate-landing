@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { SelectedPage } from "../../shared/types";
-import backgroundImage from "../../assets/hero2.jpg";
+import backgroundImage from "../../assets/hero.jpg";
 import spainFlag from "../../assets/spainFlag1.svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
