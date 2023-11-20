@@ -135,7 +135,7 @@ const About: FC<Props> = ({ setSelectedPage }) => {
 
             <div className=" flex w-full min-w-full">
               <ActionButton setSelectedPage={setSelectedPage}>
-                Получить консультацию
+                Получить руководство
               </ActionButton>
             </div>
           </div>

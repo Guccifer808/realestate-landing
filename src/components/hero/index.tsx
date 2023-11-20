@@ -29,23 +29,25 @@ const Home: FC<Props> = ({ setSelectedPage }: Props) => {
       <div className="relative mx-auto max-w-screen-xl items-center justify-center px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="relative max-w-3xl text-center ltr:sm:text-left rtl:sm:text-right">
           <div className="absolute right-12 bottom-48 mt-4 ml-4 animate-bounce-slow-four sm:bottom-48 sm:right-32">
-            {/* <GiMicrochip size={40} /> */}
             <img src={spainFlag} alt="" className="h-12 w-12" />
           </div>
-          <h1 className="text-3xl font-extrabold text-light-100 drop-shadow-2xl sm:text-5xl">
+
+          <h1 className="text-3xl font-extrabold text-light-100 drop-shadow-[5px_5px_6px_rgba(0,0,0,0.90)] sm:text-5xl">
             Получите
-            <strong className="block font-extrabold text-gold-main drop-shadow-2xl">
+            <strong className="block font-extrabold text-gold-main drop-shadow-[0px_5px_4px_rgba(0,0,0,0.55)]">
               Золотую Визу в Испании
             </strong>
           </h1>
-          {/* <p>Costa del Sol, Spain</p> */}
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-4 text-center">
+          <p className="mt-3 text-lg font-extrabold text-white drop-shadow-[5px_5px_6px_rgba(0,0,0,0.90)]">
+            📍 Costa del Sol, Spain
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center">
             <AnchorLink
               href={"#contact"}
               offset="100"
               className="w-fit gap-4 rounded-xl bg-green-main px-8 py-2.5 text-center font-semibold text-white shadow-md shadow-green-main/20 duration-200 hover:scale-105 hover:bg-gold-main md:w-max"
             >
-              Получить консультацию
+              Получить руководство
             </AnchorLink>
           </div>
         </div>

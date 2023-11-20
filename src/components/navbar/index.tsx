@@ -92,7 +92,7 @@ const Navbar: FC<Props> = ({
                   />
                   <CustomLink
                     page="Files"
-                    sectionName="Файлы"
+                    sectionName="Руководство"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -112,7 +112,7 @@ const Navbar: FC<Props> = ({
                 </div>
                 {/* Button */}
                 <ActionButton setSelectedPage={setSelectedPage}>
-                  Получить консультацию
+                  Получить руководство
                 </ActionButton>
               </div>
             ) : (
@@ -159,7 +159,7 @@ const Navbar: FC<Props> = ({
             />
             <CustomLink
               page="Files"
-              sectionName="Файлы"
+              sectionName="Руководство"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />

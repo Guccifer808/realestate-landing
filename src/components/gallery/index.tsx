@@ -75,7 +75,7 @@ const Gallery: FC<Props> = ({ setSelectedPage }) => {
                 offset="100"
                 className="w-full gap-4 rounded-xl bg-green-main px-8 py-2.5 text-center font-semibold text-white shadow-md shadow-green-main/20 duration-200 hover:scale-105 hover:bg-gold-main md:w-max"
               >
-                Получить консультацию
+                Получить руководство
               </AnchorLink>
             </div>
           </div>

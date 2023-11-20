@@ -44,10 +44,10 @@ const Features: FC<Props> = ({ setSelectedPage }: Props) => {
           }}
         >
           <span className="font-medium text-gold-main">
-            Загрузите наше руководство
+            Получить руководство
           </span>
           <h1 className=" text-2xl font-bold text-dark-100 sm:text-3xl">
-            Руководство для Покупателя
+            Руководство для Инвестора
           </h1>
         </motion.div>
         {/* services img  */}
