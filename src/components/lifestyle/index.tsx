@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import videoVibe from "../../assets/videos/LifestyleVibe.mp4";
 import videoCalahonda from "../../assets/videos/LifestyleCalahonda.mp4";
 import videoEvening from "../../assets/videos/LifestyleEvening.mp4";
-
 import ReactPlayer from "react-player";
 
 type Props = {
@@ -148,7 +147,7 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
                   >
                     <ReactPlayer
                       url={videoEvening}
-                      controls={false}
+                      controls={true}
                       width="100%"
                       height="100%"
                       playing={false}
