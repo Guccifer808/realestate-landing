@@ -1,0 +1,11 @@
+.default-flag-position {
+    top: 0;
+    left: 0;
+  }
+  
+  .default-image-position {
+    top: 0;
+    left: 0;
+    width: 100px; /* Set your default width */
+    height: 100px; /* Set your default height */
+  }

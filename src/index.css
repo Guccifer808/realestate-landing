@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  /* font-family:  Garamond, system-ui, Avenir, Helvetica, Arial, serif; */
+  /* font-family:  Inter, system-ui, Avenir, Helvetica, Arial, serif; */
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  @apply text-dark-100;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+/* Remove highlight color on mobile devices on tap */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+/* ===== Scrollbar  ===== */
+  body::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #f8f8f8; /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #036943; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 1px solid #036943; /* creates padding around scroll thumb */
+  }
+  
+  body.light::-webkit-scrollbar-track {
+    background: #f8f8f8; /* color of the tracking area */
+  }
+  
+  body.light::-webkit-scrollbar-thumb {
+    background-color: #bbb; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid #f8f8f8; /* creates padding around scroll thumb */
+  }
+
+
+ 
