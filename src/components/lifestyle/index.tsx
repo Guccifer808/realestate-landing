@@ -149,7 +149,7 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
                   >
                     <ReactPlayer
                       url={videoEvening}
-                      controls={true}
+                      controls={false}
                       width="100%"
                       height="100%"
                       playing={false}
