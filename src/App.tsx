@@ -22,7 +22,7 @@ const App: FC<Props> = (props) => {
   }, []);
 
   const handleSubmit = () => {
-    const whatsappLink = "https://wa.link/f3lsz1";
+    const whatsappLink = "https://wa.me/+34644061559";
     window.location.href = whatsappLink;
   };
 
