@@ -14,13 +14,13 @@ type Props = {
 const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [successMessage, setSuccessMessage] = useState(false);
   const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
-  // const publicKey = import.meta.env.VITE_PUBLIC_KEY_EMAILJS;
-  const publicKey = "wHKDnOuPASssRRaFd";
+  const publicKey = import.meta.env.VITE_PUBLIC_KEY_EMAILJS;
 
   const resetMessages = () => {
     setTimeout(() => {
@@ -32,24 +32,35 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!isEmailValid(email)) {
-      setError(true);
-      resetMessages();
-      return;
-    }
     try {
+      if (!isEmailValid(email)) {
+        setError(true);
+        resetMessages();
+        return;
+      }
+      if (!isPhoneValid(phone)) {
+        setError(true);
+        resetMessages();
+        return;
+      }
+      if (!isNameValid(name)) {
+        setError(true);
+        resetMessages();
+        return;
+      }
+
       await emailjs.sendForm(
-        "service_y0i6p7j",
-        "template_veyr6uf",
+        "service_d4pvyl4",
+        "template_iuy2oi7",
         e.currentTarget,
         publicKey
       );
       setSuccessMessage(true);
       resetMessages();
       navigate("/thank-you");
-      // console.log(e.currentTarget);
 
       setName("");
+      setPhone("");
       setEmail("");
     } catch (error) {
       setError(true);
@@ -62,6 +73,13 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
     return emailRegex.test(email);
   };
 
+  const isPhoneValid = (phone: string): boolean => {
+    return phone.trim().length > 1;
+  };
+
+  const isNameValid = (name: string): boolean => {
+    return name.trim().length > 1;
+  };
   return (
     <>
       <section
@@ -90,10 +108,10 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
               <div className="flex min-h-[300px] items-center justify-center rounded-xl bg-gold-main/30 p-3 shadow-lg sm:p-2 md:justify-start md:pl-14 xl:justify-center xl:pr-32">
                 <form onSubmit={handleSubmit}>
                   <div className="">
-                    <span className="font-medium text-gold-main">
+                    <span className="font-medium text-gold-main drop-shadow-lg">
                       Руководство для Инвесторов
                     </span>
-                    <h1 className="my-5 text-center text-lg font-bold text-dark-100 sm:text-2xl">
+                    <h1 className="my-5 text-center text-lg font-bold text-dark-100 drop-shadow-lg sm:text-2xl">
                       Оставьте заявку и получите руководство для инвесторов и
                       покупателей недвижимости
                     </h1>
@@ -101,23 +119,54 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                   <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
                     <img
                       src={image}
-                      className="flex h-full w-full sm:hidden md:h-96 md:w-96"
+                      className="flex h-full w-full px-8 sm:hidden md:h-96 md:w-96"
                     />
 
-                    <div className="mb-3 md:mt-3">
+                    <div className="mb-3 flex flex-col items-center md:mt-3">
+                      {name && !isNameValid(name) && (
+                        <span className="absolute max-h-6 text-center text-red-500">
+                          Неверное Имя
+                        </span>
+                      )}
                       <input
                         type="text"
                         name="name"
                         id="name"
+                        required={true}
                         autoComplete="true"
                         placeholder="Ваше Имя"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none"
+                        className={`  ${
+                          name && !isPhoneValid(name)
+                            ? "focus:border-red-500"
+                            : ""
+                        } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
                       />
                     </div>
-                    <div className="mb-3 flex flex-col items-center md:mt-3 ">
-                      {/* Updated to use flex and align items to center */}
+                    <div className="mb-3 flex flex-col items-center md:mt-3">
+                      {phone && !isPhoneValid(phone) && (
+                        <span className="absolute max-h-6 text-center text-red-500">
+                          Неверный Телефон
+                        </span>
+                      )}
+
+                      <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        autoComplete="true"
+                        placeholder="Ваш телефон"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className={`  ${
+                          phone && !isPhoneValid(phone)
+                            ? "focus:border-red-500"
+                            : ""
+                        } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
+                      />
+                    </div>
+                    <div className="mb-3 flex flex-col items-center md:mt-3">
                       {email && !isEmailValid(email) && (
                         <span className="absolute max-h-6 text-center text-red-500">
                           Неверный Email
@@ -167,7 +216,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     <img
                       src={image}
                       loading="lazy"
-                      className="absolute hidden h-full w-full transition-all duration-500 hover:scale-105 md:hidden lg:right-44 lg:flex lg:h-96 lg:w-96"
+                      className="absolute hidden h-full w-full transition-all duration-500 hover:scale-105 md:hidden lg:right-20 lg:flex lg:h-96 lg:w-96"
                     />
                   </div>
                   {/* Add the hidden inputs */}

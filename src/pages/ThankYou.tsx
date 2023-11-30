@@ -68,7 +68,7 @@ const ThankYou = (props: Props) => {
   }, []);
   return (
     <div className="h-full">
-      <div className="bg-primary-bg-light py-14 ">
+      <div className="min-h-[15vh] bg-primary-bg-light py-14">
         <nav>
           <div
             className={`bg-primary-bg-light  ${flexBetween} fixed top-0 z-30 w-full  py-1 font-medium text-dark-100`}

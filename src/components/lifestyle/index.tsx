@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import videoVibe from "../../assets/videos/LifestyleVibe.mp4";
 import videoCalahonda from "../../assets/videos/LifestyleCalahonda.mp4";
 import videoEvening from "../../assets/videos/LifestyleEvening.mp4";
+import LifestyleNew1 from "../../assets/videos/LifestyleNew1.mp4";
+import LifestyleNew2 from "../../assets/videos/LifestyleNew2.mp4";
+import LifestyleNew3 from "../../assets/videos/LifestyleNew3.mp4";
 import ReactPlayer from "react-player";
 
 type Props = {
@@ -97,10 +100,71 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
               </div>
             </div>
           </div>
+          {/* 2 desktop */}
+          <div className="w-full px-6 lg:w-6/12 ">
+            <div className="-mx-3 hidden items-center justify-evenly sm:-mx-10 md:flex">
+              <div className="w-full px-3 sm:px-4 xl:w-2/5 ">
+                <div
+                  className=" cursor-pointer py-3 sm:py-4"
+                  onMouseEnter={() => handleHover(videoCalahondaRef)}
+                  onMouseLeave={() => handleMouseOut(videoCalahondaRef)}
+                  style={{ position: "relative", display: "inline-block" }}
+                >
+                  <ReactPlayer
+                    url={LifestyleNew1}
+                    controls={true}
+                    width="100%"
+                    height="100%"
+                    playing={false}
+                    volume={0.25}
+                    preload="metadata"
+                  />
+                </div>
+                <div
+                  className="cursor-pointer py-4 sm:py-8 "
+                  onMouseEnter={() => handleHover(videoEveningRef)}
+                  onMouseLeave={() => handleMouseOut(videoEveningRef)}
+                  style={{ position: "relative", display: "inline-block" }}
+                >
+                  <ReactPlayer
+                    url={LifestyleNew2}
+                    controls={true}
+                    width="100%"
+                    height="100%"
+                    playing={false}
+                    volume={0.25}
+                    preload="metadata"
+                  />
+                </div>
+              </div>
+              <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                <div
+                  className="relative z-10 cursor-pointer py-3 sm:py-4"
+                  onMouseEnter={() => handleHover(videoVibeRef)}
+                  onMouseLeave={() => handleMouseOut(videoVibeRef)}
+                  style={{ position: "relative", display: "inline-block" }}
+                >
+                  <ReactPlayer
+                    url={LifestyleNew3}
+                    controls={true}
+                    width="100%"
+                    height="100%"
+                    playing={false}
+                    volume={0.25}
+                    preload="metadata"
+                  />
+
+                  <span className="absolute -right-7 -bottom-7 z-[-1]">
+                    <Circles />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="w-full  lg:w-1/2 xl:w-6/12">
             <motion.div
-              className="mb-5 sm:mb-10"
+              className="sm:mb-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
@@ -169,6 +233,65 @@ const Lifestyle: FC<Props> = ({ setSelectedPage }) => {
                   >
                     <ReactPlayer
                       url={videoVibe}
+                      controls={true}
+                      width="100%"
+                      height="100%"
+                      playing={false}
+                      volume={0.25}
+                      preload="metadata"
+                    />
+
+                    <span className="absolute -right-7 -bottom-7 z-[-1]">
+                      <Circles />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {/* 2 mob */}
+              <div className="-mx-3 -mt-36 flex flex-row-reverse items-center justify-evenly sm:-mx-10 sm:hidden">
+                <div className="w-full px-3 sm:px-4 xl:w-2/5">
+                  <div
+                    className="cursor-pointer py-3 sm:py-4"
+                    onMouseEnter={() => handleHover(videoCalahondaRef)}
+                    onMouseLeave={() => handleMouseOut(videoCalahondaRef)}
+                    style={{ position: "relative", display: "inline-block" }}
+                  >
+                    <ReactPlayer
+                      url={LifestyleNew1}
+                      controls={true}
+                      width="100%"
+                      height="100%"
+                      playing={false}
+                      volume={0.25}
+                      preload="metadata"
+                    />
+                  </div>
+                  <div
+                    className="cursor-pointer py-4 sm:py-8 "
+                    onMouseEnter={() => handleHover(videoEveningRef)}
+                    onMouseLeave={() => handleMouseOut(videoEveningRef)}
+                    style={{ position: "relative", display: "inline-block" }}
+                  >
+                    <ReactPlayer
+                      url={LifestyleNew2}
+                      controls={true}
+                      width="100%"
+                      height="100%"
+                      playing={false}
+                      volume={0.25}
+                      preload="metadata"
+                    />
+                  </div>
+                </div>
+                <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div
+                    className="relative z-10 cursor-pointer py-3 sm:py-4"
+                    onMouseEnter={() => handleHover(videoVibeRef)}
+                    onMouseLeave={() => handleMouseOut(videoVibeRef)}
+                    style={{ position: "relative", display: "inline-block" }}
+                  >
+                    <ReactPlayer
+                      url={LifestyleNew3}
                       controls={true}
                       width="100%"
                       height="100%"
