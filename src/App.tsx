@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import NotFound from "./pages/NotFound";
@@ -21,6 +21,14 @@ const App: FC<Props> = (props) => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleSubmit = (
+    event: FormEvent<HTMLFormElement>,
+    inputValue: string
+  ) => {
+    event.preventDefault();
+    window.open("https://wa.link/f3lsz1", "_blank");
+  };
+
   const chatMessageWithBreak = `
 Благодарим за Ваш интерес к нашим услугам по недвижимости на Коста дель Соль!
 Пожалуйста, опишите в нескольких словах в чём именно можем быть Вам полезны и с Вами свяжется один из наших менеджеров
@@ -41,11 +49,13 @@ const App: FC<Props> = (props) => {
             chatMessage={chatMessageWithBreak}
             chatboxHeight={450}
             notification={true}
-            notificationDelay={15}
+            notificationDelay={30}
             notificationSound={true}
             messageDelay={1}
             placeholder="Введите сообщение"
             statusMessage="в сети"
+            onSubmit={handleSubmit}
+            notificationLoop={2}
           />
           <Routes>
             <Route path="/" element={<Homepage />} />

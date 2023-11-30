@@ -3,6 +3,7 @@ import logo from "../../assets/LOGO.svg";
 import { Link } from "react-router-dom";
 import InstagramIcon from "../../assets/instagram.svg";
 import FacebookIcon from "../../assets/facebook.svg";
+import TelegramIcon from "../../assets/telegram.svg";
 
 interface Props {}
 
@@ -27,8 +28,8 @@ const Footer: FC<Props> = ({}: Props) => {
               onClick={handleScrollToTop}
             />
             {/* Social Media icons */}
-            <div className="mt-4 flex justify-center space-x-5 ">
-              <div className="grid grid-cols-2 gap-4 ">
+            <div className="mt-4 flex items-center justify-center space-x-5 ">
+              <div className="grid grid-cols-3 items-center justify-center gap-4">
                 <Link
                   to="https://www.instagram.com/lmgroup.realestate/"
                   target="_blank"
@@ -44,6 +45,12 @@ const Footer: FC<Props> = ({}: Props) => {
                 >
                   <img
                     src={FacebookIcon}
+                    className="transition-all duration-300 hover:scale-110"
+                  ></img>
+                </Link>
+                <Link to="https://t.me/LMGroupRealestate" target="_blank">
+                  <img
+                    src={TelegramIcon}
                     className="transition-all duration-300 hover:scale-110"
                   ></img>
                 </Link>
