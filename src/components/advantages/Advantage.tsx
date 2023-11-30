@@ -19,7 +19,7 @@ const childVariant = {
 export const advantagesList: Array<ServicesType> = [
   {
     icon: <MdFactCheck size={30} />,
-    title: "Безвизовый доступ к Испании",
+    title: "Безвизовый режим в Испании и Евросоюзе",
     description: "",
   },
   {
@@ -29,7 +29,8 @@ export const advantagesList: Array<ServicesType> = [
   },
   {
     icon: <MdPriceChange size={30} />,
-    title: "Цены до 35% ниже рыночных!",
+    title:
+      "Цена на новостройки напрямую от застройщиков - зачастую на 35% ниже рыночных",
     description: "",
   },
 
@@ -63,7 +64,7 @@ const Advantage: FC<Props> = ({ icon, title, description }: Props) => {
         y: -10,
       }}
     >
-      <div className="group flex min-h-[145px] flex-col items-center rounded-xl border border-gold-main/10 bg-primary-bg-light px-5 py-8 text-dark-100 shadow-lg shadow-gold-main/10  duration-200 hover:shadow-gold-main md:min-h-[160px]">
+      <div className="max-h[175px] group flex h-[175px] flex-col items-center justify-self-stretch rounded-xl border border-gold-main/10 bg-primary-bg-light px-5 py-8 text-dark-100 shadow-lg shadow-gold-main/10  duration-200 hover:shadow-gold-main md:min-h-[160px]">
         <div className="text-green-main group-hover:text-green-main">
           {icon}
         </div>

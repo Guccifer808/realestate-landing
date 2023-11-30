@@ -2,9 +2,11 @@ import { FC, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import NotFound from "./pages/NotFound";
-import CookieConsent from "react-cookie-consent";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Preloader from "./components/ui/Preloader";
 import ThankYou from "./pages/ThankYou";
+import avatar from "./assets/logo512.png";
+
 type Props = {};
 
 const App: FC<Props> = (props) => {
@@ -18,12 +20,33 @@ const App: FC<Props> = (props) => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const chatMessageWithBreak = `
+Благодарим за Ваш интерес к нашим услугам по недвижимости на Коста дель Соль!
+Пожалуйста, опишите в нескольких словах в чём именно можем быть Вам полезны и с Вами свяжется один из наших менеджеров
+`;
   return (
     <div className="app">
       {isLoading ? (
         <Preloader />
       ) : (
         <Router>
+          <FloatingWhatsApp
+            phoneNumber="+34 644 06 15 59"
+            accountName="LM Group Real Estate"
+            avatar={avatar}
+            chatboxStyle={{ border: "2px solid #E0A221" }}
+            allowClickAway={true}
+            chatboxClassName="chatbox"
+            chatMessage={chatMessageWithBreak}
+            chatboxHeight={450}
+            notification={true}
+            notificationDelay={15}
+            notificationSound={true}
+            messageDelay={1}
+            placeholder="Введите сообщение"
+            statusMessage="в сети"
+          />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/thank-you" element={<ThankYou />} />

@@ -7,6 +7,7 @@ import aboutImage2 from "../../assets/about2.jpg";
 import aboutImage3 from "../../assets/about3.jpg";
 import aboutImage4 from "../../assets/about4.jpg";
 import { FaPeopleGroup, FaCheckDouble, FaBriefcase } from "react-icons/fa6";
+import { IoIosPeople } from "react-icons/io";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -82,20 +83,23 @@ const About: FC<Props> = ({ setSelectedPage }) => {
               LM Group Real Estate была основана в 2013 году как семейный бизнес
               под брендом Luks Marbella. За последние 10 лет компания выросла и
               развилась во всех аспектах, в которых вы, наши уважаемые клиенты,
-              просили нас развивать наши услуги и бизнес.
+              просили нас расширить спектр наших услуг и сотрудничества.
             </p>
             <p className="mb-6 text-dark-100">
-              С тех пор мы стали отличной международной командой из 30
-              профессионалов с более чем 100 сотрудниками и партнерами во многих
-              различных секторах. Мы продолжаем органично расширять наши услуги,
-              оптимизировать наши ресурсы и модернизировать наши технологические
-              инструменты для вашего максимального удобства и преимуществ.
+              Сейчас мы являемся одной из топовых международных команд,
+              состоящей из более 30 профессионалов и 100 надежных партнеров,
+              представляющих различные сопутствующие секторы и рынки - от
+              финансирования и ВНЖ до дизайна интерьера и местного консьержа. Мы
+              продолжаем органично расширять наши услуги, оптимизировать наши
+              ресурсы и модернизировать наши технологические и другие
+              инструменты для вашего максимального удобства, безопасности и
+              результатов.
             </p>
             <p className="mb-6 text-dark-100">
-              Мы предлагаем нашим клиентам 100% комплексный подход, при котором
-              основное внимание уделяется Вам, Клиенту, и мы заботимся обо всех
-              возможных аспектах покупки, аренды, переезда, образа жизни и
-              управления инвестициями в недвижимость.
+              Мы предлагаем нашим клиентам 100% комплексный персонализированный
+              подход, фокус которого всегда на Вас, клиенте. Таким образом мы
+              заботимся обо всех возможных аспектах вашей покупки недвижимости,
+              переезда, образа жизни и управления инвестициями.
             </p>
             <motion.ul
               initial="hidden"
@@ -112,7 +116,7 @@ const About: FC<Props> = ({ setSelectedPage }) => {
                   <FaBriefcase size={18} />
                 </div>
                 <p className=" ml-4 max-w-md font-medium ">
-                  Более 10 лет на рынке
+                  Второе десятилетие на рынке
                 </p>
               </li>
               <li className="mb-6 flex items-center">
@@ -120,7 +124,15 @@ const About: FC<Props> = ({ setSelectedPage }) => {
                   <FaPeopleGroup size={24} />
                 </div>
                 <p className="ml-4 max-w-md font-medium text-dark-100">
-                  Более 100 сотрудников
+                  Более 30 сотрудников
+                </p>
+              </li>
+              <li className="mb-6 flex items-center">
+                <div className="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-green-main text-primary-bg-light">
+                  <IoIosPeople size={24} />
+                </div>
+                <p className="ml-4 max-w-md font-medium text-dark-100">
+                  100 + партнёров и коллабораторов
                 </p>
               </li>
               <li className="mb-8 flex items-center">

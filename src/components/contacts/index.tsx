@@ -93,8 +93,9 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     <span className="font-medium text-gold-main">
                       Руководство для Инвесторов
                     </span>
-                    <h1 className="mb-5 text-lg font-bold text-dark-100 sm:text-2xl">
-                      Получите руководство заполнив форму
+                    <h1 className="my-5 text-center text-lg font-bold text-dark-100 sm:text-2xl">
+                      Оставьте заявку и получите руководство для инвесторов и
+                      покупателей недвижимости
                     </h1>
                   </div>
                   <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
