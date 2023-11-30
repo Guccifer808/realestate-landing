@@ -21,11 +21,8 @@ const App: FC<Props> = (props) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = (
-    event: FormEvent<HTMLFormElement>,
-    inputValue: string
-  ) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    // event.preventDefault();
     window.open("https://wa.link/f3lsz1");
   };
 
