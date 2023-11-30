@@ -22,8 +22,8 @@ const App: FC<Props> = (props) => {
   }, []);
 
   const handleSubmit = () => {
-    const whatsappLink = "https://wa.link/f3lsz1";
-    // window.location.href = whatsappLink;
+    const phoneNumber = "+34644061559";
+    const whatsappLink = `https://wa.me/${phoneNumber}`;
     window.open(whatsappLink, "_blank");
   };
 
