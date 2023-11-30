@@ -26,7 +26,7 @@ const App: FC<Props> = (props) => {
     inputValue: string
   ) => {
     event.preventDefault();
-    window.open("https://wa.link/f3lsz1", "_blank");
+    window.open("https://wa.link/f3lsz1");
   };
 
   const chatMessageWithBreak = `
