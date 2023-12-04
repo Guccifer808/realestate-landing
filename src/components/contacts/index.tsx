@@ -116,10 +116,10 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                       покупателей недвижимости
                     </h1>
                   </div>
-                  <div className="mb-5 flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
+                  <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
                     <img
                       src={image}
-                      className=" flex h-[250px] w-fit object-cover px-10 sm:hidden md:h-96 md:w-96"
+                      className="my-2 flex h-[250px] w-fit object-cover px-10 sm:hidden md:h-96 md:w-96"
                     />
 
                     <div className="mb-3 flex flex-col items-center md:mt-3">
