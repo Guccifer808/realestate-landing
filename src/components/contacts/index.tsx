@@ -119,7 +119,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                   <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
                     <img
                       src={image}
-                      className="flex h-full w-full object-cover px-6 sm:hidden md:h-96 md:w-96"
+                      className="z-10 flex h-full w-full object-cover px-7 sm:hidden md:h-96 md:w-96"
                     />
 
                     <div className="mb-3 flex flex-col items-center md:mt-3">
