@@ -119,7 +119,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                   <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
                     <img
                       src={image}
-                      className="flex h-full w-full object-cover px-10 sm:hidden md:h-96 md:w-96"
+                      className="flex h-[250px] w-fit object-cover px-10 sm:hidden md:h-96 md:w-96"
                     />
 
                     <div className="mb-3 flex flex-col items-center md:mt-3">
@@ -143,7 +143,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                           //     ? "focus:border-red-500"
                           //     : ""
                           // } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
-                          className="w-72 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none"
+                          className="w-72 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none sm:w-64"
                         />
                         <span className="absolute top-2 right-4 text-gray-300">
                           *
@@ -170,7 +170,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                           //     ? "focus:border-red-500"
                           //     : ""
                           // } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
-                          className="w-72 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none"
+                          className="w-72 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none sm:w-64"
                         />
                         <span className="absolute top-2 right-4 text-gray-300">
                           *
@@ -192,7 +192,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                           placeholder="Ваш Email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className={`w-72 rounded-xl border ${
+                          className={`w-72 rounded-xl border sm:w-64 ${
                             email && !isEmailValid(email)
                               ? "focus:border-red-500"
                               : ""
@@ -206,7 +206,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     <div className="mb-3 flex flex-col items-center md:mt-3">
                       <button
                         type="submit"
-                        className="flex w-72 items-center justify-center rounded-xl bg-green-main p-3 font-semibold text-light-100 transition-all duration-300 hover:scale-105 hover:bg-gold-main"
+                        className="flex w-72 items-center justify-center rounded-xl bg-green-main p-3 font-semibold text-light-100 transition-all duration-300 hover:scale-105 hover:bg-gold-main sm:w-64"
                       >
                         Получить
                         <svg
