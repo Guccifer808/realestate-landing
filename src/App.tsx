@@ -1,4 +1,4 @@
-import { FC, FormEvent, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import NotFound from "./pages/NotFound";
@@ -22,9 +22,12 @@ const App: FC<Props> = (props) => {
   }, []);
 
   const handleSubmit = () => {
-    const phoneNumber = "+34644061559";
-    const whatsappLink = `https://wa.me/${phoneNumber}`;
-    window.open(whatsappLink, "_blank");
+    // const phoneNumber = "+34644061559";
+    // const whatsappLink = `https://wa.me/${phoneNumber}`;
+    // window.open(whatsappLink, "_blank");
+
+    const whatsappLink = `https://wa.link/f3lsz1`;
+    window.open(whatsappLink);
   };
 
   const chatMessageWithBreak = `
@@ -45,7 +48,7 @@ const App: FC<Props> = (props) => {
             allowClickAway={true}
             chatboxClassName="chatbox"
             chatMessage={chatMessageWithBreak}
-            chatboxHeight={450}
+            chatboxHeight={500}
             notification={true}
             notificationDelay={30}
             notificationSound={true}
@@ -53,7 +56,7 @@ const App: FC<Props> = (props) => {
             placeholder="Введите сообщение"
             statusMessage="в сети"
             onSubmit={handleSubmit}
-            notificationLoop={2}
+            notificationLoop={1}
           />
           <Routes>
             <Route path="/" element={<Homepage />} />

@@ -38,16 +38,16 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
         resetMessages();
         return;
       }
-      if (!isPhoneValid(phone)) {
-        setError(true);
-        resetMessages();
-        return;
-      }
-      if (!isNameValid(name)) {
-        setError(true);
-        resetMessages();
-        return;
-      }
+      // if (!isPhoneValid(phone)) {
+      //   setError(true);
+      //   resetMessages();
+      //   return;
+      // }
+      // if (!isNameValid(name)) {
+      //   setError(true);
+      //   resetMessages();
+      //   return;
+      // }
 
       await emailjs.sendForm(
         "service_d4pvyl4",
@@ -73,13 +73,13 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
     return emailRegex.test(email);
   };
 
-  const isPhoneValid = (phone: string): boolean => {
-    return phone.trim().length > 1;
-  };
+  // const isPhoneValid = (phone: string): boolean => {
+  //   return phone.trim().length > 1;
+  // };
 
-  const isNameValid = (name: string): boolean => {
-    return name.trim().length > 1;
-  };
+  // const isNameValid = (name: string): boolean => {
+  //   return name.trim().length > 1;
+  // };
   return (
     <>
       <section
@@ -119,52 +119,63 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                   <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
                     <img
                       src={image}
-                      className="flex h-full w-full px-8 sm:hidden md:h-96 md:w-96"
+                      className="flex h-full w-full object-cover px-6 sm:hidden md:h-96 md:w-96"
                     />
 
                     <div className="mb-3 flex flex-col items-center md:mt-3">
-                      {name && !isNameValid(name) && (
+                      {/* {name && !isNameValid(name) && (
                         <span className="absolute max-h-6 text-center text-red-500">
                           Неверное Имя
                         </span>
-                      )}
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        required={true}
-                        autoComplete="true"
-                        placeholder="Ваше Имя"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className={`  ${
-                          name && !isPhoneValid(name)
-                            ? "focus:border-red-500"
-                            : ""
-                        } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
-                      />
+                      )} */}
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          required={true}
+                          autoComplete="true"
+                          placeholder="Ваше Имя"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          // className={`  ${
+                          //   name && !isPhoneValid(name)
+                          //     ? "focus:border-red-500"
+                          //     : ""
+                          // } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
+                          className="w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none"
+                        />
+                        <span className="absolute top-2 right-4 text-gray-300">
+                          *
+                        </span>
+                      </div>
                     </div>
                     <div className="mb-3 flex flex-col items-center md:mt-3">
-                      {phone && !isPhoneValid(phone) && (
+                      {/* {phone && !isPhoneValid(phone) && (
                         <span className="absolute max-h-6 text-center text-red-500">
                           Неверный Телефон
                         </span>
-                      )}
-
-                      <input
-                        type="text"
-                        name="phone"
-                        id="phone"
-                        autoComplete="true"
-                        placeholder="Ваш телефон"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className={`  ${
-                          phone && !isPhoneValid(phone)
-                            ? "focus:border-red-500"
-                            : ""
-                        } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
-                      />
+                      )} */}
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="phone"
+                          id="phone"
+                          autoComplete="true"
+                          placeholder="Ваш телефон"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          // className={`  ${
+                          //   phone && !isPhoneValid(phone)
+                          //     ? "focus:border-red-500"
+                          //     : ""
+                          // } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
+                          className="w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none"
+                        />
+                        <span className="absolute top-2 right-4 text-gray-300">
+                          *
+                        </span>
+                      </div>
                     </div>
                     <div className="mb-3 flex flex-col items-center md:mt-3">
                       {email && !isEmailValid(email) && (
@@ -172,20 +183,25 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                           Неверный Email
                         </span>
                       )}
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        autoComplete="true"
-                        placeholder="Ваш Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className={`w-64 rounded-xl border ${
-                          email && !isEmailValid(email)
-                            ? "focus:border-red-500"
-                            : ""
-                        } px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
-                      />
+                      <div className="relative">
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          autoComplete="true"
+                          placeholder="Ваш Email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className={`w-64 rounded-xl border ${
+                            email && !isEmailValid(email)
+                              ? "focus:border-red-500"
+                              : ""
+                          } px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
+                        />
+                        <span className="absolute top-2 right-4 text-gold-main">
+                          *
+                        </span>
+                      </div>
                     </div>
                     <div className="mb-3 flex flex-col items-center md:mt-3">
                       <button
@@ -220,8 +236,8 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     />
                   </div>
                   {/* Add the hidden inputs */}
-                  <input type="hidden" name="name" value={name} />
-                  <input type="hidden" name="email" value={email} />
+                  {/* <input type="hidden" name="name" value={name} />
+                  <input type="hidden" name="email" value={email} /> */}
                 </form>
                 {/* Success message */}
                 {successMessage && (

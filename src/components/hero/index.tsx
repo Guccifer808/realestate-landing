@@ -38,14 +38,14 @@ const Home: FC<Props> = ({}: Props) => {
               Золотую Визу в Испании
             </strong>
           </h1>
-          <p className="mt-3 text-lg font-extrabold text-white drop-shadow-[5px_5px_6px_rgba(0,0,0,0.90)]">
+          <p className="mt-4 text-lg font-extrabold text-white drop-shadow-[5px_5px_6px_rgba(0,0,0,0.90)]">
             📍 Costa del Sol, Spain
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center">
             <AnchorLink
               href={"#contact"}
               offset="100"
-              className="w-fit gap-4 rounded-xl bg-green-main px-8 py-2.5 text-center font-semibold text-white shadow-md shadow-green-main/20 duration-200 hover:scale-105 hover:bg-gold-main md:w-max"
+              className="w-max gap-4 rounded-xl bg-green-main px-8 py-2.5 text-center font-semibold tracking-tight text-white shadow-md shadow-green-main/20 duration-200 hover:scale-105 hover:bg-gold-main md:w-max"
             >
               Получить руководство
             </AnchorLink>
