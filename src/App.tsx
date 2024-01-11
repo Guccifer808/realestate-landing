@@ -6,8 +6,13 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Preloader from "./components/ui/Preloader";
 import ThankYou from "./pages/ThankYou";
 import avatar from "./assets/logo512.png";
+import TagManager from "react-gtm-module";
+import { chatMessageWithBreak, tagManagerArgs } from "./shared/constants";
 
 type Props = {};
+
+// GTM init
+TagManager.initialize(tagManagerArgs);
 
 const App: FC<Props> = (props) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,18 +27,10 @@ const App: FC<Props> = (props) => {
   }, []);
 
   const handleSubmit = () => {
-    // const phoneNumber = "+34644061559";
-    // const whatsappLink = `https://wa.me/${phoneNumber}`;
-    // window.open(whatsappLink, "_blank");
-
     const whatsappLink = `https://wa.link/f3lsz1`;
     window.open(whatsappLink);
   };
 
-  const chatMessageWithBreak = `
-Благодарим за Ваш интерес к нашим услугам по недвижимости на Коста дель Соль!
-Пожалуйста, опишите в нескольких словах в чём именно можем быть Вам полезны и с Вами свяжется один из наших менеджеров
-`;
   return (
     <div className="app">
       {isLoading ? (
@@ -65,35 +62,6 @@ const App: FC<Props> = (props) => {
           </Routes>
         </Router>
       )}
-
-      {/* <CookieConsent
-        debug={true}
-        location="bottom"
-        expires={7}
-        buttonStyle={{
-          background: "#2563EB",
-          color: "white",
-          fontWeight: "normal",
-          textShadow: "2px 2px black",
-          borderRadius: "5px",
-          margin: "10px",
-          fontFamily: "sans-serif, Inter",
-        }}
-        contentStyle={{
-          textAlign: "center",
-        }}
-        style={{
-          background: "#0B0B0D",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderTop: "1px solid #2563EB",
-        }}
-        acceptOnScrollPercentage={25}
-        acceptOnScroll={true}
-      >
-        We collect cookies to analyze our website traffic and performance.
-      </CookieConsent> */}
     </div>
   );
 };

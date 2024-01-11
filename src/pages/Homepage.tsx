@@ -8,7 +8,6 @@ import Footer from "../components/footer";
 import { FC, useEffect, useState } from "react";
 import Gallery from "../components/gallery";
 import Lifestyle from "../components/lifestyle";
-
 import TagManager from "react-gtm-module";
 import Features from "../components/features";
 
@@ -29,8 +28,17 @@ const Homepage: FC = () => {
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
+    // Fix YM scrolling behavior bug
+    const scrollToTop = () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1200); // delay
+    };
     //adding event listener
     window.addEventListener("scroll", handleScroll);
+
+    // Scroll to top after a delay when the component mounts
+    scrollToTop();
     //removing on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -52,7 +60,6 @@ const Homepage: FC = () => {
       <Lifestyle setSelectedPage={setSelectedPage} />
       <Contacts setSelectedPage={setSelectedPage} />
       <Footer />
-      {/* <GoogleTagManager /> */}
     </div>
   );
 };

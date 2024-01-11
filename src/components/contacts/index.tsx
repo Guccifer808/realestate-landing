@@ -111,7 +111,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     <span className="font-medium text-gold-main drop-shadow-lg">
                       Руководство для Инвесторов
                     </span>
-                    <h1 className="my-5 text-center text-lg font-bold text-dark-100 drop-shadow-lg sm:text-2xl">
+                    <h1 className=" my-5 text-center text-lg font-bold text-dark-100 drop-shadow-lg sm:text-2xl">
                       Оставьте заявку и получите руководство для инвесторов и
                       покупателей недвижимости
                     </h1>
@@ -119,15 +119,10 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                   <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-8">
                     <img
                       src={image}
-                      className="my-2 flex h-[250px] w-fit object-cover px-10 sm:hidden md:h-96 md:w-96"
+                      className=" my-7 flex h-[250px] w-fit object-cover px-10 sm:hidden md:h-96 md:w-96"
                     />
 
                     <div className="mb-3 flex flex-col items-center md:mt-3">
-                      {/* {name && !isNameValid(name) && (
-                        <span className="absolute max-h-6 text-center text-red-500">
-                          Неверное Имя
-                        </span>
-                      )} */}
                       <div className="relative">
                         <input
                           type="text"
@@ -138,11 +133,6 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                           placeholder="Ваше Имя"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          // className={`  ${
-                          //   name && !isPhoneValid(name)
-                          //     ? "focus:border-red-500"
-                          //     : ""
-                          // } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
                           className="w-72 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none sm:w-64"
                         />
                         <span className="absolute top-2 right-4 text-gray-300">
@@ -150,12 +140,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                         </span>
                       </div>
                     </div>
-                    <div className="mb-3 flex flex-col items-center md:mt-3">
-                      {/* {phone && !isPhoneValid(phone) && (
-                        <span className="absolute max-h-6 text-center text-red-500">
-                          Неверный Телефон
-                        </span>
-                      )} */}
+                    <div className="mb-3 flex flex-col items-center md:mt-3 ">
                       <div className="relative">
                         <input
                           type="text"
@@ -165,11 +150,6 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                           placeholder="Ваш телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          // className={`  ${
-                          //   phone && !isPhoneValid(phone)
-                          //     ? "focus:border-red-500"
-                          //     : ""
-                          // } w-64 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none`}
                           className="w-72 rounded-xl border px-4 py-3 text-green-main focus:border-green-main focus:outline-none sm:w-64"
                         />
                         <span className="absolute top-2 right-4 text-gray-300">
@@ -203,10 +183,11 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                         </span>
                       </div>
                     </div>
-                    <div className="mb-3 flex flex-col items-center md:mt-3">
+                    <div className="z-20 mb-3 flex flex-col items-center md:mt-3">
                       <button
                         type="submit"
-                        className="flex w-72 items-center justify-center rounded-xl bg-green-main p-3 font-semibold text-light-100 transition-all duration-300 hover:scale-105 hover:bg-gold-main sm:w-64"
+                        className=" flex w-72 items-center justify-center rounded-xl bg-green-main p-3 font-semibold text-light-100 transition-all duration-300 hover:scale-105 hover:bg-gold-main sm:w-64"
+                        disabled={!email}
                       >
                         Получить
                         <svg
@@ -232,12 +213,9 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     <img
                       src={image}
                       loading="lazy"
-                      className="absolute hidden h-full w-full transition-all duration-500 hover:scale-105 md:hidden lg:right-20 lg:flex lg:h-96 lg:w-96"
+                      className="absolute z-0 hidden h-full w-full transition-all duration-500 hover:scale-105 md:hidden lg:right-48 lg:top-0 lg:flex lg:h-64 lg:w-64"
                     />
                   </div>
-                  {/* Add the hidden inputs */}
-                  {/* <input type="hidden" name="name" value={name} />
-                  <input type="hidden" name="email" value={email} /> */}
                 </form>
                 {/* Success message */}
                 {successMessage && (
