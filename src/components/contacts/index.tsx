@@ -108,7 +108,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
               <div className="flex min-h-[300px] items-center justify-center rounded-xl bg-gold-main/30 p-3 shadow-lg sm:p-2 md:justify-start md:pl-14 xl:justify-center xl:pr-32">
                 <form onSubmit={handleSubmit}>
                   <div className="">
-                    <span className="font-medium text-gold-main drop-shadow-lg">
+                    <span className=" font-medium text-gold-main drop-shadow-lg">
                       Руководство для Инвесторов
                     </span>
                     <h1 className=" my-5 text-center text-lg font-bold text-dark-100 drop-shadow-lg sm:text-2xl">
@@ -213,7 +213,7 @@ const Contacts: FC<Props> = ({ setSelectedPage }: Props) => {
                     <img
                       src={image}
                       loading="lazy"
-                      className="absolute z-0 hidden h-full w-full transition-all duration-500 hover:scale-105 md:hidden lg:right-48 lg:top-0 lg:flex lg:h-64 lg:w-64"
+                      className="absolute z-[-10] hidden h-full w-full transition-all duration-500 hover:scale-105 md:hidden lg:right-48 lg:-top-3 lg:flex lg:h-64 lg:w-64"
                     />
                   </div>
                 </form>
